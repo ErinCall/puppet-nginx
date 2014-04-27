@@ -38,6 +38,7 @@ class nginx (
   $nx_worker_connections = 'UNSET',
   $nx_multi_accept = 'UNSET',
   $nx_types_hash_max_size = 'UNSET',
+  $nx_server_names_hash_bucket_size = 'UNSET',
   $nx_sendfile = 'UNSET',
   $nx_keepalive_timeout = 'UNSET',
   $nx_tcp_nodelay = 'UNSET',
@@ -82,6 +83,11 @@ class nginx (
   $nx_types_hash_max_size_real = $nx_types_hash_max_size ? {
     'UNSET' => $::nginx::params::nx_types_hash_max_size,
     default => $nx_types_hash_max_size,
+  }
+
+  $nx_server_names_hash_bucket_size_real = $nx_server_names_hash_bucket_size ? {
+    'UNSET' => $::nginx::params::nx_server_names_hash_bucket_size,
+    default => $nx_server_names_hash_bucket_size,
   }
 
   $nx_sendfile_real = $nx_sendfile ? {

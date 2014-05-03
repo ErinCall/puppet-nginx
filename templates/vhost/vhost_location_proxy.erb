@@ -1,4 +1,4 @@
-  location <% if @match_type -%><%= @match_type %><% end -%> <%= location %> {
+  location <% if @match_type -%><%= @match_type %><% end -%> <%= @location %> {
     proxy_pass <%= @proxy %>;
 <% if @proxy_redirect -%>
     proxy_redirect <%= proxy_redirect %>;
